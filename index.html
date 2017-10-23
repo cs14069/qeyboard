@@ -1,0 +1,71 @@
+<?php
+
+include dirname(__file__).'/src/php/part/function.php';
+
+$index_page = true;
+include dirname(__file__).'/src/php/part/head.php';
+
+//headerは読み込まない
+//include dirname(__file__).'/src/php/part/header.php'
+
+?>
+	<div id='loading_div'>
+		<div id='loading'></div>
+	</div>
+	<div class='float wrapper'>
+		<div class='half left' id='left_container'>
+			<header id='header' class='float'>
+				<img src='/skin/img/q2-4-1.png' id='site_logo_img' class='left'>
+				<h1 class='left'><?php echo $site_title; ?></h1>
+			</header>
+			<div id='main_left_div'>
+				<textarea id='main_textarea' data-tabid='1'></textarea>
+			</div>
+		</div>
+		<div class='half right' id='right_container'>
+			<div id='tab_div'>
+				<form id='tab_form' class='float'>
+					<input type='radio' name='tabid' id='tabid_1' checked>
+					<div><label for='tabid_1' id='tabid_label_1'>新しいファイル</label></div>
+				</form>
+			</div>
+			<div id='main_right_div'>
+				<div id='button_div' class='float'>
+					<a rel='tooltip' title='文章を保存する' id='save_tt' class='left'><button onclick='saveClick();' class='fa fa-save'><span>保存</span></button></a>
+					<!--         	<a rel='tooltip' title='ファイルの編集履歴一覧を新しいタブで確認する' id='history_tt' class='left'><button onclick='historyClick();' class='fa fa-history'>編集履歴</button></a> -->
+					<a rel='tooltip' title='文章を保存して新規登録する' id='register_tt' class='left'><button onclick='registerClick();' class='fa fa-address-card-o'><span>新規登録</span></button></a>
+					<a rel='tooltip' title='文章を保存してログインする' id='login_tt' class='left'><button onclick='loginClick();' class='fa fa-sign-in'><span>ログイン</span></button></a>
+					<div id='menu_drop_div' class='left drop_div'>
+						<a rel='tooltip' title='メニュー' id='menu_tt' class='left'><button class='fa fa-bars'><span>メニュー</span></button></a>
+						<ul id='menu_ul' class='dropdown'>
+							<a rel='tooltip' title='この文章の編集履歴を見る' id='op_history'><li class='fa fa-history'>編集履歴</li></a>
+							<a rel='tooltip' title='セッションに保存してファイル一覧を見る' id='op_allfile'><li class='fa fa-files-o'>ファイル一覧</li></a>
+		      				<a rel='tooltip' title='画面表示を切り替える' id='op_display_mode'><li class='fa fa-desktop'>画面表示切り替え</li></a>
+       					</ul>
+       				</div>
+       				<a rel='tooltip' title='セッションに保存してマイページを見る' id='mypage_tt' class='left'><button onclick='mypageClick();' class='fa fa-home'><span>マイページ</span></button></a>
+       				<div id='download_drop_div' class='left drop_div'>
+       					<a rel='tooltip' title='ファイルの形式を指定してダウンロード' class='download_tt left'><button class='fa fa-download'><span>ダウンロード</span></button></a>
+       					<ul id='download_ul' class='dropdown'>
+       						<a rel='tooltip' title='.txt形式でダウンロード' id='op_download_txt'><li value='txt' class='fa fa-file-text-o'>.txt形式</li></a>
+       						<a rel='tooltip' title='.html形式でダウンロード' id='op_download_txt'><li value='html' class='fa fa-html5'>.html形式</li></a>
+       						<a rel='tooltip' title='.docx形式でダウンロード' id='op_download_txt'><li value='docx' class='fa fa-file-word-o'>.docx形式</li></a>
+       						<a rel='tooltip' title='.txt形式をzip圧縮してダウンロード' id='op_download_txt'><li value='txt_zip' class='fa fa-file-text-o'>.txt形式（<span class='fa-file-zip-o'>zip圧縮</span>）</li></a>
+       						<a rel='tooltip' title='.html形式をzip圧縮してダウンロード' id='op_download_txt'><li value='html_zip' class='fa fa-html5'>.html形式（<span class='fa-file-zip-o'>zip圧縮</span>）</li></a>
+       						<a rel='tooltip' title='.docx形式をzip圧縮してダウンロード' id='op_download_txt'><li value='docx_zip' class='fa fa-file-word-o'>.docx形式（<span class='fa-file-zip-o'>zip圧縮</span>）</li></a>
+       					</ul>
+      			 	</div>
+      			 	<a rel='tooltip' title='ログアウトメニューへ' id='logout_tt' class='left'><button onclick='logoutClick()' class='fa fa-sign-out'><span>ログアウト</span></button></a>
+      			 </div>
+				<div id='outer_message_div' data-tabid='1'>
+					<div id='message_div'></div>
+				</div>
+      			 <div id='outer_diff_div' data-tabid='1'>
+       				<div id='diff_div'></div>
+       			</div>
+			</div>
+		</div>
+	</div>
+<?php
+
+include dirname(__file__).'/src/php/part/footer.php';

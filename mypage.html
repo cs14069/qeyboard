@@ -1,0 +1,25 @@
+<?php
+
+include dirname(__file__).'/src/php/part/function.php';
+
+pageTitle('マイページ');
+$mypage_page = true;
+include dirname(__file__).'/src/php/part/head.php';
+
+include dirname(__file__).'/src/php/part/header.php';
+?>
+	<div class='center_wrapper'>
+		<div class='center'>
+			<div id='info_div'>
+				<h3>あなたのマイページ</h3>
+				<p>ファイルの一覧等を表示します</p>
+			</div>
+			<div class='center_main_div'>
+				<h3>ファイル一覧</h3>
+				<div id='all_file_div'></div>
+			</div>
+		</div>
+	</div>
+<?php
+
+include dirname(__file__).'/src/php/part/footer.php';

@@ -1,0 +1,35 @@
+<?php
+
+include dirname(__file__).'/src/php/part/function.php';
+
+pageTitle('ログイン');
+$login_page = true;
+include dirname(__file__).'/src/php/part/head.php';
+
+include dirname(__file__).'/src/php/part/header.php';
+?>
+	<div class='center_wrapper'>
+		<div class='center'>
+			<div id='info_div'>
+				<h3>ユーザ名とパスワードを入力してください</h3>
+				<p><a href='register'>アカウントをまだ登録していない方はこちらで登録してください</a></p>
+				<div id='info_div_message'></div>
+			</div>
+			<div class='center_main_div'>
+				<form id='login_form' action='javascript:login();'>
+					<label for='login_user_name'>ユーザ名（半角英数字とハイフンのみ 3～16文字）</label>
+					<input type='text' placeholder='your-user-name' id='login_user_name' pattern='^([a-zA-Z0-9-]{3,16})$' required>
+					<div id='login_invalid_user_name'><p class='invalid'></p></div>
+
+					<label for='login_pass'>パスワード（半角英数字のみ 6～16文字）</label>
+					<input type='password' placeholder='password' id='login_pass' pattern='^([a-zA-Z0-9]{6,16})$' required>
+					<div id='login_invalid_password'><p class='invalid'></p></div>
+
+					<input type='submit' id='login_submit' class='soft_button green_button' value='ログイン'>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php
+
+include dirname(__file__).'/src/php/part/footer.php';

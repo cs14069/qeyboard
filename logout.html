@@ -1,0 +1,28 @@
+<?php
+
+include dirname(__file__).'/src/php/part/function.php';
+
+pageTitle('ログアウト');
+$logout_page = true;
+include dirname(__file__).'/src/php/part/head.php';
+
+include dirname(__file__).'/src/php/part/header.php';
+?>
+	<div class='center_wrapper'>
+		<div class='center'>
+			<div id='info_div'>
+				<h3>ログアウトメニュー</h3>
+				<p>一つ選択してください</p>
+				<p>（現在文章はセッションに保存されていますが　ファイルには保存されていません）</p>
+				<div id='info_div_message'></div>
+			</div>
+			<div class='center_main_div'>
+        		<a rel='tooltip' title='文章を保存してからログアウト'><button class='soft_button green_button' onclick='saveLogoutClick();'>文章を保存してログアウト</button></a>
+        		<a rel='tooltip' title='文章を保存しないでログアウト'><button class='soft_button red_button' onclick='dumpLogoutClick();'>文章を破棄してログアウト</button></a>
+        		<a rel='tooltip' title='ログアウトしない'><button class='soft_button white_button'onclick='cancelLogoutClick();'>ログアウトしない</button></a>
+			</div>
+		</div>
+	</div>
+<?php
+
+include dirname(__file__).'/src/php/part/footer.php';

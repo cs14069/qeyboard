@@ -1,0 +1,49 @@
+<?php
+
+include dirname(__file__).'/src/php/part/function.php';
+
+$index_page = true;
+include dirname(__file__).'/src/php/part/head.php';
+
+//headerは読み込まない
+//include dirname(__file__).'/src/php/part/header.php'
+
+?>
+	<div class='float'>
+	<div class='half left'>
+		<header>
+			<h1 id='site_title'><?php echo $site_title; ?></h1>
+		</header>
+		<div id='main_textarea_div'>
+			<textarea id='main_textarea'></textarea>
+		</div>
+	</div>
+	<div class='half right'>
+		<div id='button_div' class='float'>
+        	<a rel='tooltip' title='文章を保存する' id='save_tt' class='left'><button onclick='saveClick();'>保存</button></a>
+        	<div id='download_drop_div' class='left'>
+				<a rel='tooltip' title='ファイルの形式を指定してダウンロード' id='download_tt' class='left'><button>ダウンロード</button></a>
+				<ul id='download_ul' class='dropdown'>
+        			<a rel='tooltip' title='.txt形式でダウンロード' id='op_download_txt'><li value='txt' id='op_download_txt'>.txt形式</li></a>
+   	    			<a rel='tooltip' title='.html形式でダウンロード' id='op_download_txt'><li value='html' id='op_download_html'>.html形式</li></a>
+       				<a rel='tooltip' title='.docx形式でダウンロード' id='op_download_txt'><li value='docx' id='op_download_docx'>.docx形式</li></a>
+        			<a rel='tooltip' title='.txt形式をzip圧縮してダウンロード' id='op_download_txt'><li value='txt_zip' id='op_download_txt_zip'>.txt形式（zip圧縮）</li></a>
+   	    			<a rel='tooltip' title='.html形式をzip圧縮してダウンロード' id='op_download_txt'><li value='html_zip' id='op_download_html_zip'>.html形式（zip圧縮）</li></a>
+       				<a rel='tooltip' title='.docx形式をzip圧縮してダウンロード' id='op_download_txt'><li value='docx_zip' id='op_download_docx_zip'>.docx形式（zip圧縮）</li></a>
+        		</ul>
+			</div>
+        	<a rel='tooltip' title='ファイルの編集履歴一覧を新しいページで確認する' id='history_tt' class='left'><button onclick='historyClick();'>編集履歴</button></a>
+        	<a rel='tooltip' title='ファイル一覧を新しいページで確認する' id='allfile_tt' class='left'><button onclick='allfileClick();'>ファイル一覧</button></a>
+        	<a rel='tooltip' title='文章を保存してログアウトする' id='logout_tt' class='left'><button onclick='logoutClick();'>ログアウト</button></a>
+        	<a rel='tooltip' title='文章を保存してマイページへ' id='mypage_tt' class='left'><button onclick='mypageClick();'>マイページ</button></a>
+        	<a rel='tooltip' title='文章を保存してログインする' id='login_tt' class='left'><button onclick='loginClick();'>ログイン</button></a>
+        	<a rel='tooltip' title='文章を保存して新規登録する' id='register_tt' class='left'><button onclick='registerClick();'>新規登録</button></a>
+		</div>
+		<div id='message_div'></div>
+		<div id='diff_div'></div>
+	</div>
+	</div>
+
+<?php
+
+include dirname(__file__).'/src/php/part/footer.php';
